@@ -18,13 +18,36 @@
 
 .icon-cont{
     display: inline-block;
-    border: 3px solid white;
-    background-color: white;
     color: black;
     padding: 5px;
     margin: 2px;
     border-radius: 50%;
+    height: 38px;
+    width: 38px;
+    text-align: center;
+    position: relative;
 }
 .cont-foto{
     height: 100px;
 }
+body{
+    background-color: #dae3e7;
+}
+
+.icon-cont:hover{
+    transition: ease-in, color, 300ms;
+    transform: translateY(-3px);
+    color: #505050;
+}
+section.icons{
+    cursor:pointer;
+    user-select: none;
+}
+.header{
+    background-color: white;
+}
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+  }
+.col-icon{margin: auto;}
