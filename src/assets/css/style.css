@@ -1,12 +1,12 @@
 .portada {
     max-width: 100%;
     height: 40vh;
-    background:url("../images/portada.jpeg");
+    /* background:url("../images/portada.jpeg"); */
     background-size:cover;
 }
 .fotocircular {
     border-radius: 50%;
-    background: url("../images/Foto\ Formal.jpg");
+    /* background: url("../images/Foto\ Formal.jpg"); */
     background-size: cover;
     margin: 5px;
     border:5px solid white;

@@ -3,9 +3,9 @@
         <img src="assets/images/logo.png" width="30" height="30" class="d-inline-block align-top " alt="">
         #YoProgramo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon" (click)="isCollapsed = !isCollapsed" ></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNav" [ngClass]="{'show': !isCollapsed}">
             <ul class="navbar-nav nav-fill w-100">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Acerca de</a>
@@ -29,7 +29,9 @@
         
         <div class="row">
             <div class="col col-lg-3 col-md-4 col-12 cont-foto">
-                <div class="fotocircular"></div>
+                <div class="fotocircular"[ngStyle]="{
+                    'background-image': 'url(\'assets/images/Foto Formal.jpg\')'
+                }"></div>
             </div>
             <div class="col col-md-8 col-12 py-4">
                 <h1 class="name">Lautaro Antuel Aubert</h1>
