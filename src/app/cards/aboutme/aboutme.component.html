@@ -2,6 +2,7 @@
     <!-- si la sesion esta iniciada, muestre un boton de editar -->
     <app-base-button 
         (editEvent)="handleEditEvent($event)" 
+        [hasSaveVar]="true"
         [editVar]="this.editing">
     </app-base-button>
 

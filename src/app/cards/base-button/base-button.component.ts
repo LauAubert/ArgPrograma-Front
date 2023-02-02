@@ -12,6 +12,8 @@ export class BaseButtonComponent {
     // this.editing=!this.editing;
   }
   @Input() set editVar(e:boolean) {this.editing = e;}
+  @Input() set hasSaveVar(s:boolean) {this.has_save = s;}
+  has_save = false;
   logged:boolean = true;
   editing = false;
 }

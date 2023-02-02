@@ -1,5 +1,5 @@
 <div *ngIf="logged"class="btn-container">
-    <button class="save-btn" (click)="emitter('save');" *ngIf="editing">
+    <button class="save-btn" (click)="emitter('save');" *ngIf="editing && has_save">
         <i class="fa-solid fa-lg fa-circle-check"></i>
     </button>
     <button class="edit-btn" (click)="emitter('edit');">
