@@ -1,0 +1,19 @@
+<div class="card mb-4"> <!-- Card de aboutme-->
+    <!-- si la sesion esta iniciada, muestre un boton de editar -->
+    <app-base-button 
+        (editEvent)="handleEditEvent($event)" 
+        [editVar]="this.editing">
+    </app-base-button>
+
+    <div class="card-body">
+        <h5 class="card-title">Acerca de</h5> 
+        <h6 class="card-subtitle mb-2 text-muted"></h6>
+
+        <p class="card-text" *ngIf="!editing">
+            {{texto}}
+        </p>
+        <div *ngIf="editing">
+            <textarea class="form-control" [(ngModel)]="textoTemp" rows="6" [value]="texto"></textarea>
+        </div>
+    </div>
+</div>

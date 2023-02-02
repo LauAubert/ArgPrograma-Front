@@ -1,0 +1,11 @@
+<div *ngIf="logged"class="btn-container">
+    <button class="save-btn" (click)="emitter('save');" *ngIf="editing">
+        <i class="fa-solid fa-lg fa-circle-check"></i>
+    </button>
+    <button class="edit-btn" (click)="emitter('edit');">
+        <i class="fa-solid fa-lg" [ngClass]="{
+            'fa-pen-to-square':!editing,
+            'fa-circle-xmark':editing
+        }"></i>
+    </button>
+</div>

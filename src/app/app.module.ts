@@ -3,13 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AboutmeComponent } from './cards/aboutme/aboutme.component';
+import { BaseEditorComponent } from './cards/base-editor/base-editor.component';
+import { BaseButtonComponent } from './cards/base-button/base-button.component';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AboutmeComponent,
+    BaseEditorComponent,
+    BaseButtonComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
