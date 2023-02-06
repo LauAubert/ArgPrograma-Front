@@ -2,6 +2,9 @@
     <button class="save-btn" (click)="emitter('save');" *ngIf="editing && has_save">
         <i class="fa-solid fa-lg fa-circle-check"></i>
     </button>
+    <button class="add-btn" (click)="emitter('add');" *ngIf="editing && !has_save">
+        <i class="fa-solid fa-lg fa-circle-plus"></i>
+    </button>
     <button class="edit-btn" (click)="emitter('edit');">
         <i class="fa-solid fa-lg" [ngClass]="{
             'fa-pen-to-square':!editing,

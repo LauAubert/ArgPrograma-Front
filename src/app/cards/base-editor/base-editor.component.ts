@@ -1,5 +1,4 @@
-import { Component,OnInit } from '@angular/core';
-import { using } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-base-editor',
@@ -9,6 +8,9 @@ import { using } from 'rxjs';
 export class BaseEditorComponent implements OnInit{
   name: string;
   editing: boolean = false;
+  modalID: number = 0;
+  @Input() set nameIdentifier(n:string) {this.name = n;}
+  @Input() set modalIdentifier(e:number) {this.modalID = e;}
   constructor() { 
     this.name = 'BaseEditorComponent';
   }
@@ -17,6 +19,7 @@ export class BaseEditorComponent implements OnInit{
     // procesa el evento del botón base-button
     if(event=='edit') this.toggleEditing();
     if(event=='save') this.save();
+    if(event=='add') this.create();
   }
   
   toggleEditing() {
@@ -31,11 +34,11 @@ export class BaseEditorComponent implements OnInit{
     console.log('Creando...'+this.name);
   }
 
-  update() {
+  update(n:number = 0) {
     console.log('Actualizando...'+this.name);
   }
 
-  delete() {
+  delete(n:number = 0) {
     console.log('Eliminando...'+this.name);
   }
   ngOnInit(): void {}

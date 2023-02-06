@@ -1,0 +1,34 @@
+<div class="card mb-4"> <!-- Card experiencia laboral -->
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item mt-2">
+            <h5 class="list-title">{{title}}</h5>
+        </li>
+        <li class="list-group-item" *ngFor="let item of items">
+            <div class="row">
+                <div class="col-sm-5">
+                    <img src="/assets/images/image-default.png" alt="" width="100%">
+                </div>
+                <div class="col-sm">
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <h6 class="card-title text-muted">{{item.year}}</h6>
+                    <p class="card-text">{{item.description}}</p>
+                </div>
+            </div>
+            <app-ud-button
+                [itemVar]="item"
+                (deleteEvent)="send_data_to_modal($event, 'delete')"
+                (updateEvent)="send_data_to_modal($event, 'update')"
+                *ngIf="editing">
+                <!-- (editEvent)="handleEditEvent($event)"  -->
+                <!-- (deleteEvent)="handleDeleteEvent($event)" -->
+            </app-ud-button>
+        </li>
+    </ul>
+    <app-base-button 
+        (editEvent)="handleEditEvent($event)" 
+        [editVar]="this.editing"
+        [hasSaveVar]="false">
+    </app-base-button>
+</div>
+
+  
