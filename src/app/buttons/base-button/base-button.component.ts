@@ -3,7 +3,7 @@ import { Component, Output,Input,EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-base-button',
   templateUrl: './base-button.component.html',
-  styleUrls: ['./base-button.component.css']
+  styleUrls: ['./../buttons.css']
 })
 export class BaseButtonComponent {
   @Output() private editEvent = new EventEmitter<string>();
