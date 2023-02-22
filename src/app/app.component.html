@@ -72,10 +72,33 @@
             </app-experience>
         </div>
         <div class="col-lg-4 col-12">
-            <!-- Contacto -->            
+            <!-- Contacto -->
+            <app-contact
+                [modalIdentifier]="4"
+                [nameIdentifier]="'contact'"
+                >
+            </app-contact>            
             <!-- Skills -->
+            <app-skill
+                [modalIdentifier]="5"
+                [nameIdentifier]="'skills'"
+                [titleVar]="'Hard & Soft Skills'"
+                [itemsVar]="data.skills">
+            </app-skill>
             <!-- Educacion -->
+            <app-education
+                [modalIdentifier]="6"
+                [nameIdentifier]="'education'"
+                [titleVar]="'Educación'"
+                [itemsVar]="data.education">
+            </app-education>
             <!-- Idiomas -->            
+            <app-skill
+                [modalIdentifier]="7"
+                [nameIdentifier]="'languages'"
+                [titleVar]="'Idiomas'"
+                [itemsVar]="data.languages">
+            </app-skill>
         </div>
     </div>
 </div>

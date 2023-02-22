@@ -5,7 +5,7 @@ import { ModalComunicationService } from 'src/app/services/modal-comunication.se
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
-  styleUrls: ['./experience.component.css','./../base-button/base-button.component.css']
+  styleUrls: ['./experience.component.css']
 })
 export class ExperienceComponent extends BaseEditorComponent{
   items:any[];

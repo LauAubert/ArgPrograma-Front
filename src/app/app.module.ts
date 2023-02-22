@@ -11,6 +11,9 @@ import { ExperienceComponent } from './cards/experience/experience.component';
 import { UdButtonComponent } from './buttons/ud-button/ud-button.component';
 
 import { FormsModule } from '@angular/forms';
+import { ContactComponent } from './cards/contact/contact.component';
+import { SkillComponent } from './cards/skill/skill.component';
+import { EducationComponent } from './cards/education/education.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { FormsModule } from '@angular/forms';
     BaseEditorComponent,
     BaseButtonComponent,
     ExperienceComponent,
-    UdButtonComponent
+    UdButtonComponent,
+    ContactComponent,
+    SkillComponent,
+    EducationComponent
   ],
   imports: [
     BrowserModule,
