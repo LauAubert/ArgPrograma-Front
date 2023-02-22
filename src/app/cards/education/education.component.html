@@ -1,0 +1,22 @@
+<div class="card mb-4">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item mt-2"><h5 class="list-title">Educación</h5></li>
+      <li class="list-group-item" *ngFor="let item of items">
+        <div class="row">
+            <div class="col-1 col-icon">
+                <i class="fa-solid" [ngClass]="item.icon"></i>
+            </div>
+            <div class="col">
+                <b class="text-muted">{{item.degree}}</b>
+                <p class="mb-0">{{item.school}}</p>
+                <p class="mb-0">({{item.year}})</p>
+            </div>
+        </div>
+      </li>
+    </ul>
+    <app-base-button
+        (editEvent)="openModal($event)"
+        [hasSaveVar]="false"
+        [editVar]="false">
+    </app-base-button>
+</div>
