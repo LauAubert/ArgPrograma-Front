@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-ud-button',
   templateUrl: './ud-button.component.html',
-  styleUrls: ['./../buttons.css']
+  styleUrls: ['../buttons.component.css']
 })
 export class UdButtonComponent {
   @Output() private deleteEvent = new EventEmitter<string>();
