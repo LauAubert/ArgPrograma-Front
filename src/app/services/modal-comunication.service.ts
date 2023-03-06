@@ -12,8 +12,15 @@ export class ModalComunicationService {
   // funcion que envia el mensaje
   sendInfo(info:any) { 
     this.data.next(info);
-    console.log(info);
+    // console.log(info);
   }
+}
+
+export interface Data{
+  modalId:number;
+  dataContainer:string;
+  action:string;
+  data:any;
 }
 
 /* EJEMPLO DE COMO RECIBIR

@@ -14,6 +14,9 @@ import { FormsModule } from '@angular/forms';
 import { ContactComponent } from './cards/contact/contact.component';
 import { SkillComponent } from './cards/skill/skill.component';
 import { EducationComponent } from './cards/education/education.component';
+import { CurtainComponent } from './modal/curtain/curtain.component';
+import { BaseModalComponent } from './modal/base-modal/base-modal.component';
+import { CloseButtonComponent } from './buttons/close-button/close-button.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { EducationComponent } from './cards/education/education.component';
     UdButtonComponent,
     ContactComponent,
     SkillComponent,
-    EducationComponent
+    EducationComponent,
+    CurtainComponent,
+    BaseModalComponent,
+    CloseButtonComponent
   ],
   imports: [
     BrowserModule,

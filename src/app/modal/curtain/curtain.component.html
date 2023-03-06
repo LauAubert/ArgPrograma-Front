@@ -1,0 +1,15 @@
+<div class="curtain" *ngIf="curtainOn"><div class="row">
+    <div class="col"></div>
+        <div class="col-md-8 col-12 align-self-center">
+            <!-- Tarjetas Modal -->
+            <app-base-modal
+            [modalDataVar]="currentData"
+            [modalIDVar]="5"
+            [idTriggerVar]="currentModalID"
+            (closeModal)="handleEvent($event)">
+            </app-base-modal>
+            
+    </div>
+    <div class="col"></div>
+    <app-close-button (closeModal)="handleEvent($event)"></app-close-button>
+</div></div>
