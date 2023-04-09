@@ -10,13 +10,14 @@ import { BaseButtonComponent } from './buttons/base-button/base-button.component
 import { ExperienceComponent } from './cards/experience/experience.component';
 import { UdButtonComponent } from './buttons/ud-button/ud-button.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ContactComponent } from './cards/contact/contact.component';
 import { SkillComponent } from './cards/skill/skill.component';
 import { EducationComponent } from './cards/education/education.component';
 import { CurtainComponent } from './modal/curtain/curtain.component';
 import { BaseModalComponent } from './modal/base-modal/base-modal.component';
 import { CloseButtonComponent } from './buttons/close-button/close-button.component';
+import { ExperienceModalComponent } from './modal/experience-modal/experience-modal.component';
 
 @NgModule({
   declarations: [
@@ -31,11 +32,13 @@ import { CloseButtonComponent } from './buttons/close-button/close-button.compon
     EducationComponent,
     CurtainComponent,
     BaseModalComponent,
-    CloseButtonComponent
+    CloseButtonComponent,
+    ExperienceModalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

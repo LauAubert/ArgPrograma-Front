@@ -10,3 +10,4 @@ export class AppComponent {
   isCollapsed:boolean = true;
   data = data;
 }
+export {data};
