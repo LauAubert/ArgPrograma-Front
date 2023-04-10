@@ -2,8 +2,16 @@ import { Component,  } from '@angular/core';
 
 import { BaseModalComponent } from '../base-modal/base-modal.component';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {data} from '../../app.component'
+
+
+interface T {
+  id: number;
+  name: string;
+  year: string;
+  description: string;
+}
 
 @Component({
   selector: 'app-experience-modal',
@@ -17,21 +25,27 @@ export class ExperienceModalComponent extends BaseModalComponent {
     'description': new FormControl('', [Validators.required])
   });
   isEditMode: boolean = false; // para indicar si estamos en modo edición o creación
+  allData:Array<T> = [];
+  // defino T como un objeto con las propiedades que voy a usar
   //modalData: any; // objeto para guardar los datos a editar
 
-  constructor(private route: ActivatedRoute) {super(); }
+  constructor(private route: ActivatedRoute,private router: Router) {super(); }
 
   ngOnInit(): void {
     console.log(this.route.snapshot.queryParams['id'])
-    this.modalData = data.projects[this.route.snapshot.queryParams['id']-1]
-    console.log(this.modalData)
+    // si el data.name de app-routing.module.ts es igual a 'Proyecto'
+    if      ( this.route.snapshot.data['name'] == 'Proyecto' ){this.allData = data.projects;}
+    else if ( this.route.snapshot.data['name'] == 'Trabajo'  ){this.allData = data.jobs;}
+    // this.modalData = data.projects[this.route.snapshot.queryParams['id']-1]
+    // console.log(this.modalData)
     // comprobamos si estamos en modo edición o creación
     if (this.route.snapshot.queryParams['id']) {
       // si existe el id en los parámetros de la url, es porque estamos editando
       this.isEditMode = true;
-      // aquí podemos hacer una solicitud GET para obtener los datos del formulario a editar
-      // supongamos que los datos vienen en un objeto "data"
-      this.modalData = data.projects[this.route.snapshot.queryParams['id']];
+      console.log(this.allData.find(objeto => objeto.id == 1))
+      this.modalData = this.allData.find(objeto => 
+        objeto.id == this.route.snapshot.queryParams['id']
+        );
       // seteamos los valores del formulario con los datos obtenidos
       this.form.setValue({
         'title': this.modalData.name,
@@ -41,7 +55,9 @@ export class ExperienceModalComponent extends BaseModalComponent {
     }
   }
 
-
+  override emitCloseModal(): void {
+    this.router.navigateByUrl('/');
+  }
 }
 
 // console.log(this.route.snapshot.queryParams['id'])

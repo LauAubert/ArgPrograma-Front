@@ -24,13 +24,14 @@ export class BaseModalComponent {
 
   @Output() closeModal = new EventEmitter<string>();
   emitCloseModal() {
+    
     this.show=false;
-    this.closeModal.emit('close');
-    console.log({
-      modalId: this.modalID,
-      data: this.modalData,
-      currentModalId: this.modalID,
-    });
+    // this.closeModal.emit('close');
+    // console.log({
+    //   modalId: this.modalID,
+    //   data: this.modalData,
+    //   currentModalId: this.modalID,
+    // });
   }
 
   sendRequest(){}

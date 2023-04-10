@@ -17,11 +17,12 @@
    
    .modal-container>* {
        max-width: 5000px;
-       max-height: 5000px;
+       max-height: 80vh;
        min-width: 550px;
        border-radius: 5px;
        background-color: #fff;
        position: relative;
+       overflow-y: auto;
      }
    
    /* Si la pantalla en horizontal es menor a 766px el min-width: 100% */
