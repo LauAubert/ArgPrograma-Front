@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter, Input ,OnInit} from '@angular/core';
-
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-base-modal',
   templateUrl: './base-modal.component.html',
@@ -34,5 +34,20 @@ export class BaseModalComponent {
     // });
   }
 
-  sendRequest(){}
+  editURL:string    = '';
+  removeURL:string  = '';
+  backURL:string    = '/';
+
+  route: ActivatedRoute;
+  router: Router;
+  constructor(route: ActivatedRoute,router: Router){
+    this.route = route;
+    this.router = router;
+  }
+
+  sendUpdateRequest(){}
+  sendRemoveRequest(){}
+  backToHome(){
+    this.router.navigate([this.backURL]);
+  }
 }

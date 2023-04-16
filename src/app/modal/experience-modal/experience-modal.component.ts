@@ -28,9 +28,11 @@ export class ExperienceModalComponent extends BaseModalComponent {
   allData:Array<T> = [];
   // defino T como un objeto con las propiedades que voy a usar
   //modalData: any; // objeto para guardar los datos a editar
-
-  constructor(private route: ActivatedRoute,private router: Router) {super(); }
-
+  constructor( route: ActivatedRoute, router: Router) {
+    super(route , router); 
+    this.editURL = this.route.snapshot.data['name'];
+  }
+ 
   ngOnInit(): void {
     console.log(this.route.snapshot.queryParams['id'])
     // si el data.name de app-routing.module.ts es igual a 'Proyecto'
@@ -55,9 +57,6 @@ export class ExperienceModalComponent extends BaseModalComponent {
     }
   }
 
-  override emitCloseModal(): void {
-    this.router.navigateByUrl('/');
-  }
 }
 
 // console.log(this.route.snapshot.queryParams['id'])

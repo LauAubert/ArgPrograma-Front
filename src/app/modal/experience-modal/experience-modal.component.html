@@ -21,10 +21,11 @@
                 <textarea class="form-control" id="description" name="description" rows="3" formControlName="description"></textarea>
             </div>
         </form>
+        <div class="btn mt-3 btn-danger" (click)="sendRemoveRequest()">Eliminar</div>
     </div>
     <div class="card-footer">
-        <button class="btn mx-2 btn-danger" (click)="emitCloseModal()">Cancelar</button>
-        <button class="btn mx-2 btn-success">Guardar</button>
+        <button class="btn mx-2 btn-danger" (click)="backToHome()">Cancelar</button>
+        <button class="btn mx-2 btn-success" (click)="sendUpdateRequest()">Guardar</button>
     </div>
 </div>
 

@@ -1,15 +1,8 @@
-<div class="curtain" *ngIf="curtainOn">
+<div class="curtain" *ngIf="true">
         <div class="modal-container">
             <div class="row"></div>
             <!-- <div class="card"><div class="card-body"></div></div> -->
             <!-- Tarjetas Modal -->
-            <app-base-modal
-            [modalDataVar]="currentData"
-            [modalIDVar]="5"
-            [idTriggerVar]="currentModalID"
-            (closeModal)="handleEvent($event)">
-            </app-base-modal>
-
             
         </div>
     <app-close-button (closeModal)="handleEvent($event)"></app-close-button>
