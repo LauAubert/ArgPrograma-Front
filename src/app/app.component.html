@@ -59,16 +59,18 @@
             <!-- Proyectos -->
             <app-experience
                 [modalIdentifier]="2"
-                [nameIdentifier]="'projects'"
+                [nameIdentifier]="'project'"
                 [titleVar]="'Proyectos'"
                 [itemsVar]="data.projects">
+                [modalUrlVar]="'/project'"
             </app-experience>
             <!-- Experiencia laboral -->
             <app-experience
                 [modalIdentifier]="3"
-                [nameIdentifier]="'jobs'"
+                [nameIdentifier]="'job'"
                 [titleVar]="'Experiencia Laboral'"
                 [itemsVar]="data.jobs">
+                [modalUrlVar]="'/job'"
             </app-experience>
         </div>
         <div class="col-lg-4 col-12">

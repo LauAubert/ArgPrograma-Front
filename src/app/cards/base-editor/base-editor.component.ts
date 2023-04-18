@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-base-editor',
@@ -9,19 +10,32 @@ export class BaseEditorComponent implements OnInit{
   name: string;
   editing: boolean = false;
   modalID: number = 0;
+  router:any;
   @Input() set nameIdentifier(n:string) {this.name = n;}
   @Input() set modalIdentifier(e:number) {this.modalID = e;}
-  constructor() { 
+  constructor(router:Router) { 
+    this.router = router;
     this.name = 'BaseEditorComponent';
   }
   
-  handleEditEvent(event:string) { 
+  handleEditEvent(event:string,id:any=0) { 
     // procesa el evento del botón base-button
     if(event=='edit') this.toggleEditing();
-    if(event=='save') this.save();
     if(event=='add') this.create();
+    if(event=='open' ||event=='create') this.open(0);
+    if(event=='update') {try {this.open(id);} catch(e) {console.log(e);}}
   }
   
+  open(item:number) {
+    if (item !=0){
+      this.router.navigateByUrl(this.name + '?id='+item);
+    }
+    else {
+      console.log('Abriendo...'+this.name);
+      this.router.navigateByUrl(this.name);
+    }
+  }
+
   toggleEditing() {
     let texto = this.editing ? 'Cancelando' : 'Editando';
     console.log(texto + '... ' + this.name);

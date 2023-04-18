@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { BaseEditorComponent } from '../base-editor/base-editor.component';
+import { Router } from '@angular/router';
 // import {Globals} from './../../globals';
 @Component({
   selector: 'app-aboutme',
@@ -9,8 +10,8 @@ import { BaseEditorComponent } from '../base-editor/base-editor.component';
 export class AboutmeComponent extends BaseEditorComponent{
   texto:string;
   textoTemp:string;
-  constructor() {
-    super();
+  constructor(router:Router) {
+    super(router);
     this.name = 'AboutmeComponent';
     this.texto = 'Texto de AboutmeComponent';
     this.textoTemp = "";

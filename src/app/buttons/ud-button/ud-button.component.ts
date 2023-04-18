@@ -15,6 +15,6 @@ export class UdButtonComponent {
     this.deleteEvent.emit(item); 
   }
   updateEmitter(item:any) {
-    this.updateEvent.emit(item); 
+    this.updateEvent.emit(item.id); 
   }
 }

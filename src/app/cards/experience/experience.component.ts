@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { BaseEditorComponent } from '../base-editor/base-editor.component';
 import { ModalComunicationService } from 'src/app/services/modal-comunication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-experience',
@@ -12,9 +13,9 @@ export class ExperienceComponent extends BaseEditorComponent{
   title:string;
   @Input() set itemsVar(i:any[]) {this.items = i;}
   @Input() set titleVar(t:string) {this.title = t;}
-
-  constructor(private modalComunicationService:ModalComunicationService) {
-    super();
+  
+  constructor(private modalComunicationService:ModalComunicationService, router:Router) {
+    super(router);
     this.name = 'ExperienceComponent';
     this.items = [];
     this.title = 'ExperienceComponent';
@@ -35,5 +36,8 @@ export class ExperienceComponent extends BaseEditorComponent{
       }
     );
   }
-  
+
+  openUpdateModal(item:any) {
+    this.open(item);
+  }
 }

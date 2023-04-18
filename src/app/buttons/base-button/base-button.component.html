@@ -1,11 +1,11 @@
 <div *ngIf="logged"class="btn-container">
-    <button class="save-btn" (click)="emitter('save');" *ngIf="editing && has_save">
-        <i class="fa-solid fa-lg fa-circle-check"></i>
+    <button class="link-btn" (click)="emitter('open');"*ngIf="has_save" >
+        <i class="fa-solid fa-lg fa-pen-to-square"></i>
     </button>
-    <button class="add-btn" (click)="emitter('add');" *ngIf="editing && !has_save">
+    <button class="save-btn" (click)="emitter('create');" *ngIf="editing && !has_save">
         <i class="fa-solid fa-lg fa-circle-plus"></i>
     </button>
-    <button class="edit-btn" (click)="emitter('edit');">
+    <button class="edit-btn" (click)="emitter('edit');" *ngIf="!has_save">
         <i class="fa-solid fa-lg" [ngClass]="{
             'fa-pen-to-square':!editing,
             'fa-circle-xmark':editing

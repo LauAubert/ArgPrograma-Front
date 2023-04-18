@@ -17,7 +17,7 @@
             <app-ud-button
                 [itemVar]="item"
                 (deleteEvent)="send_data_to_modal($event, 'delete')"
-                (updateEvent)="send_data_to_modal($event, 'update')"
+                (updateEvent)="handleEditEvent('update',$event)"
                 *ngIf="editing">
                 <!-- (editEvent)="handleEditEvent($event)"  -->
                 <!-- (deleteEvent)="handleDeleteEvent($event)" -->
