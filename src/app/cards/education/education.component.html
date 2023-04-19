@@ -11,12 +11,18 @@
                 <p class="mb-0">{{item.school}}</p>
                 <p class="mb-0">({{item.year}})</p>
             </div>
+            <div class="btn btn-success btn-pen"
+                *ngIf="this.editing"
+                (click)="handleEditEvent('update',item.id)"
+            >
+                <i class="fas fa-pen"></i>
+            </div>
         </div>
       </li>
     </ul>
     <app-base-button
-        (editEvent)="openModal($event)"
+        (editEvent)="handleEditEvent($event)"
         [hasSaveVar]="false"
-        [editVar]="false">
+        [editVar]="this.editing">
     </app-base-button>
 </div>
