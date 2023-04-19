@@ -28,12 +28,14 @@ export class ExperienceModalComponent extends BaseModalComponent {
   allData:Array<T> = [];
   // defino T como un objeto con las propiedades que voy a usar
   //modalData: any; // objeto para guardar los datos a editar
+  editID: number = 0;
   constructor( route: ActivatedRoute, router: Router) {
     super(route , router); 
     this.editURL = this.route.snapshot.data['name'];
   }
- 
+  
   ngOnInit(): void {
+    this.editID = this.route.snapshot.queryParams['id'];
     console.log(this.route.snapshot.queryParams['id'])
     // si el data.name de app-routing.module.ts es igual a 'Proyecto'
     if      ( this.route.snapshot.data['name'] == 'Proyecto' ){this.allData = data.projects;}

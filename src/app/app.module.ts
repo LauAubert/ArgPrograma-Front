@@ -18,6 +18,7 @@ import { CurtainComponent } from './modal/curtain/curtain.component';
 import { BaseModalComponent } from './modal/base-modal/base-modal.component';
 import { CloseButtonComponent } from './buttons/close-button/close-button.component';
 import { ExperienceModalComponent } from './modal/experience-modal/experience-modal.component';
+import { SkillModalComponent } from './modal/skill-modal/skill-modal.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ExperienceModalComponent } from './modal/experience-modal/experience-mo
     CurtainComponent,
     BaseModalComponent,
     CloseButtonComponent,
-    ExperienceModalComponent
+    ExperienceModalComponent,
+    SkillModalComponent
   ],
   imports: [
     BrowserModule,

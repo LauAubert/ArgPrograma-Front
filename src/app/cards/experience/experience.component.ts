@@ -37,7 +37,4 @@ export class ExperienceComponent extends BaseEditorComponent{
     );
   }
 
-  openUpdateModal(item:any) {
-    this.open(item);
-  }
 }

@@ -20,14 +20,4 @@ export class SkillComponent extends BaseEditorComponent{
     this.title = 'SkillComponent';
   }
 
-  openModal(event:any){
-    this.modalComunicationService.sendInfo(
-      {
-        modalId:this.modalID,
-        dataContainer:this.name,
-        action:'edit',
-        data:event
-      }
-    );
-  }
 }

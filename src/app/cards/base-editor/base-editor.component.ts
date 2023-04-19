@@ -20,6 +20,7 @@ export class BaseEditorComponent implements OnInit{
   
   handleEditEvent(event:string,id:any=0) { 
     // procesa el evento del botón base-button
+    console.log(event+id);
     if(event=='edit') this.toggleEditing();
     if(event=='add') this.create();
     if(event=='open' ||event=='create') this.open(0);
@@ -56,4 +57,8 @@ export class BaseEditorComponent implements OnInit{
     console.log('Eliminando...'+this.name);
   }
   ngOnInit(): void {}
+
+  openUpdateModal(item:any) {
+    this.open(item);
+  }
 }
