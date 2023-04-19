@@ -19,6 +19,9 @@ import { BaseModalComponent } from './modal/base-modal/base-modal.component';
 import { CloseButtonComponent } from './buttons/close-button/close-button.component';
 import { ExperienceModalComponent } from './modal/experience-modal/experience-modal.component';
 import { SkillModalComponent } from './modal/skill-modal/skill-modal.component';
+import { EducationModalComponent } from './modal/education-modal/education-modal.component';
+import { ContactModalComponent } from './modal/contact-modal/contact-modal.component';
+import { AboutmeModalComponent } from './modal/aboutme-modal/aboutme-modal.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { SkillModalComponent } from './modal/skill-modal/skill-modal.component';
     BaseModalComponent,
     CloseButtonComponent,
     ExperienceModalComponent,
-    SkillModalComponent
+    SkillModalComponent,
+    EducationModalComponent,
+    ContactModalComponent,
+    AboutmeModalComponent
   ],
   imports: [
     BrowserModule,

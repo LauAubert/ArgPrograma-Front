@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ExperienceModalComponent } from './modal/experience-modal/experience-modal.component';
 import { SkillModalComponent } from './modal/skill-modal/skill-modal.component';
+import { EducationModalComponent } from './modal/education-modal/education-modal.component';
+import { ContactModalComponent } from './modal/contact-modal/contact-modal.component';
+import { AboutmeComponent } from './cards/aboutme/aboutme.component';
 const routes: Routes = [
   {
     path: 'project', 
@@ -29,6 +32,27 @@ const routes: Routes = [
     component: SkillModalComponent,
     data: {
       name: 'Idioma',
+    }
+  },
+  {
+    path: 'education',
+    component: EducationModalComponent,
+    data: { 
+      name: 'Educación',
+    }
+  },
+  {
+    path: 'contact',
+    component: ContactModalComponent,
+    data: {
+      name: 'Contacto',
+    }
+  },
+  {
+    path: 'aboutme',
+    component: AboutmeComponent,
+    data: {
+      name: 'Sobre mi',
     }
   },
 ];
