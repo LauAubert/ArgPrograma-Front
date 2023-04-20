@@ -5,6 +5,7 @@ import { SkillModalComponent } from './modal/skill-modal/skill-modal.component';
 import { EducationModalComponent } from './modal/education-modal/education-modal.component';
 import { ContactModalComponent } from './modal/contact-modal/contact-modal.component';
 import { AboutmeComponent } from './cards/aboutme/aboutme.component';
+import { AboutmeModalComponent } from './modal/aboutme-modal/aboutme-modal.component';
 const routes: Routes = [
   {
     path: 'project', 
@@ -50,7 +51,7 @@ const routes: Routes = [
   },
   {
     path: 'aboutme',
-    component: AboutmeComponent,
+    component: AboutmeModalComponent,
     data: {
       name: 'Sobre mi',
     }
