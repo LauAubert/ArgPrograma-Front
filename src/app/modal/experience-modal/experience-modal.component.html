@@ -4,7 +4,8 @@
 
 <div class="card text-center" *ngIf="true">
     <div class="card-header">
-        Featured
+        <div *ngIf="!this.editID">Creando un item</div>
+        <div *ngIf="this.editID">Editando #{{this.editID}}</div>
     </div>
     <div class="card-body">
         <form [formGroup]="form" action="" method="post">

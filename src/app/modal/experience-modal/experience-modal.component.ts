@@ -31,24 +31,22 @@ export class ExperienceModalComponent extends BaseModalComponent {
   editID: number = 0;
   constructor( route: ActivatedRoute, router: Router) {
     super(route , router); 
-    this.editURL = this.route.snapshot.data['name'];
   }
   
   ngOnInit(): void {
     this.editID = this.route.snapshot.queryParams['id'];
-    console.log(this.route.snapshot.queryParams['id'])
+    console.log(this.editID)
     // si el data.name de app-routing.module.ts es igual a 'Proyecto'
     if      ( this.route.snapshot.data['name'] == 'Proyecto' ){this.allData = data.projects;}
     else if ( this.route.snapshot.data['name'] == 'Trabajo'  ){this.allData = data.jobs;}
     // this.modalData = data.projects[this.route.snapshot.queryParams['id']-1]
     // console.log(this.modalData)
     // comprobamos si estamos en modo edición o creación
-    if (this.route.snapshot.queryParams['id']) {
+    if (this.editID) {
       // si existe el id en los parámetros de la url, es porque estamos editando
       this.isEditMode = true;
-      console.log(this.allData.find(objeto => objeto.id == 1))
       this.modalData = this.allData.find(objeto => 
-        objeto.id == this.route.snapshot.queryParams['id']
+        objeto.id == this.editID
         );
       // seteamos los valores del formulario con los datos obtenidos
       this.form.setValue({
