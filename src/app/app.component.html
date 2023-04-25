@@ -59,16 +59,18 @@
             <!-- Proyectos -->
             <app-experience
                 [modalIdentifier]="2"
-                [nameIdentifier]="'projects'"
+                [nameIdentifier]="'project'"
                 [titleVar]="'Proyectos'"
                 [itemsVar]="data.projects">
+                [modalUrlVar]="'/project'"
             </app-experience>
             <!-- Experiencia laboral -->
             <app-experience
                 [modalIdentifier]="3"
-                [nameIdentifier]="'jobs'"
+                [nameIdentifier]="'job'"
                 [titleVar]="'Experiencia Laboral'"
                 [itemsVar]="data.jobs">
+                [modalUrlVar]="'/job'"
             </app-experience>
         </div>
         <div class="col-lg-4 col-12">
@@ -81,7 +83,7 @@
             <!-- Skills -->
             <app-skill
                 [modalIdentifier]="5"
-                [nameIdentifier]="'skills'"
+                [nameIdentifier]="'skill'"
                 [titleVar]="'Hard & Soft Skills'"
                 [itemsVar]="data.skills">
             </app-skill>
@@ -95,7 +97,7 @@
             <!-- Idiomas -->            
             <app-skill
                 [modalIdentifier]="7"
-                [nameIdentifier]="'languages'"
+                [nameIdentifier]="'language'"
                 [titleVar]="'Idiomas'"
                 [itemsVar]="data.languages">
             </app-skill>

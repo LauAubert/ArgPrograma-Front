@@ -28,16 +28,16 @@
     "aboutme":"I'm a software developer with 3 years of experience in the industry. I'm currently working as a full stack developer at a startup in Buenos Aires, Argentina. I'm passionate about learning new technologies and I'm always looking for new challenges.",
     "contact":[
         {
-            "icon":"fa-envelope",
-            "text":""
-        },
-        {
-            "icon":"fa-link",
-            "text":""
-        },
-        {
             "icon":"fa-location-dot",
-            "text":""
+            "text":"Cuidad, País"
+        },
+        {
+            "icon":"fa-envelope",
+            "text":"correo@mail.com"
+        },
+        {
+            "icon":"fa-phone",
+            "text":"+(1) 123 456 7890"
         }
     ],
     "projects":[
@@ -72,11 +72,13 @@
     ],
     "skills":[
         {
+            "id":1,
             "name":"python",
             "description":"lorem ipsum",
             "level":90
         },
         {
+            "id":2,
             "name":"javascript",
             "description":"lorem ipsum",
             "level":80
@@ -85,11 +87,13 @@
     ],
     "languages":[
         {
+            "id":1,
             "name":"spanish",
             "description":"lorem ipsum",
             "level":100
         },
         {
+            "id":2,
             "name":"english",
             "description":"lorem ipsum",
             "level":80

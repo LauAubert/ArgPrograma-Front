@@ -43,6 +43,7 @@ export class BaseModalComponent {
   constructor(route: ActivatedRoute,router: Router){
     this.route = route;
     this.router = router;
+    this.editURL = this.route.snapshot.data['name'];
   }
 
   sendUpdateRequest(){}

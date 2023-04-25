@@ -4,7 +4,8 @@
 
 <div class="card text-center" *ngIf="true">
     <div class="card-header">
-        Featured
+        <div *ngIf="!this.editID">Creando un item</div>
+        <div *ngIf="this.editID">Editando #{{this.editID}}</div>
     </div>
     <div class="card-body">
         <form [formGroup]="form" action="" method="post">
@@ -21,7 +22,7 @@
                 <textarea class="form-control" id="description" name="description" rows="3" formControlName="description"></textarea>
             </div>
         </form>
-        <div class="btn mt-3 btn-danger" (click)="sendRemoveRequest()">Eliminar</div>
+        <div *ngIf="editID" class="btn mt-3 btn-danger" (click)="sendRemoveRequest()">Eliminar</div>
     </div>
     <div class="card-footer">
         <button class="btn mx-2 btn-danger" (click)="backToHome()">Cancelar</button>

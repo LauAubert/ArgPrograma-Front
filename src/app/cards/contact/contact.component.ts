@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseEditorComponent } from '../base-editor/base-editor.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -7,5 +8,5 @@ import { BaseEditorComponent } from '../base-editor/base-editor.component';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent extends BaseEditorComponent{
-
+  constructor(router:Router) {super(router);}
 }
