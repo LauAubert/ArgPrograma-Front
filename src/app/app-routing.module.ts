@@ -6,6 +6,7 @@ import { EducationModalComponent } from './modal/education-modal/education-modal
 import { ContactModalComponent } from './modal/contact-modal/contact-modal.component';
 import { AboutmeComponent } from './cards/aboutme/aboutme.component';
 import { AboutmeModalComponent } from './modal/aboutme-modal/aboutme-modal.component';
+import { LoginModalComponent } from './modal/login-modal/login-modal.component';
 const routes: Routes = [
   {
     path: 'project', 
@@ -56,6 +57,10 @@ const routes: Routes = [
       name: 'Sobre mi',
     }
   },
+  {
+    path: 'login',
+    component: LoginModalComponent,
+  }
 ];
 
 @NgModule({

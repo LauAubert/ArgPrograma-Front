@@ -27,14 +27,6 @@ export class ExperienceComponent extends BaseEditorComponent{
   // envia los datos para que el modal los reciba
   send_data_to_modal(item:any,action:string) {
     // console.log('Enviando datos al modal...');
-    this.modalComunicationService.sendInfo(
-      {
-        modalId:this.modalID,
-        dataContainer:this.name,
-        action:action,
-        data:item
-      }
-    );
   }
 
 }

@@ -1,27 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class ModalComunicationService {
   // maneja las suscripciones, todos los suscriptores reciben el mismo valor
-  private data = new Subject<any>();
-  modalState = this.data.asObservable();
-  constructor() { }
-  
-  // funcion que envia el mensaje
-  sendInfo(info:any) { 
-    this.data.next(info);
-    // console.log(info);
+  private apiUrl = 'http://localhost:3000'; // Reemplazar por tu API URL
+  private token: string = '';
+
+  constructor(
+    private http: HttpClient,
+    private jwtHelper: JwtHelperService
+  ) { }
+  isLoggedIn(): boolean {
+    const token = localStorage.getItem('access_token');
+    return !this.jwtHelper.isTokenExpired(token);
   }
 }
 
-export interface Data{
-  modalId:number;
-  dataContainer:string;
-  action:string;
-  data:any;
-}
 
 /* EJEMPLO DE COMO RECIBIR
   import { ModalComunicationService } from 'src/app/services/modal-comunication.service';
