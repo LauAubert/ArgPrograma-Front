@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environments';
+import { LocalStorage } from '@ngx-pwa/local-storage';
 
-interface LoginResponse {access_token: string;}
+interface LoginResponse {
+  token: string;
+  Error: string;
+}
 
 @Component({
   selector: 'app-login-modal',
@@ -19,27 +23,30 @@ export class LoginModalComponent {
 
   constructor(
     private http: HttpClient,
-    private jwtHelper: JwtHelperService,
     private router: Router,
+    private localStorage: LocalStorage,
   ) { }
 
   login() {
-    this.http.post<LoginResponse>('/api/login', { user: this.user, password: this.password })
+    this.http.post<LoginResponse>(environment.apiURL+'login', { user: this.user, password: this.password })
       .subscribe(
         response => {
-          localStorage.setItem('access_token', response.access_token);
-          this.backToHome();
+          if (response.token != null) {
+            localStorage.setItem('Authorization', response.token);
+            this.backToHome();
+          }
+          if (response.Error != null) {
+            localStorage.removeItem('Authorization');
+            alert(JSON.stringify(response));
+          }
+          console.log(response)
         },
         error => {
-          console.log('Error de inicio de sesión:', error);
+          alert('Error de inicio de sesión: '+ error);
         }
       );
   }
 
-  isUserAuthenticated() {
-    const token = localStorage.getItem('access_token');
-    return !this.jwtHelper.isTokenExpired(token);
-  }
   backToHome(){
     this.router.navigateByUrl('/');
   }
