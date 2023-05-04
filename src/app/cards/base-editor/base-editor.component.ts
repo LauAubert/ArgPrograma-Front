@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RequestService } from 'src/app/services/request-service.service';
 
 @Component({
   selector: 'app-base-editor',
@@ -11,10 +12,16 @@ export class BaseEditorComponent implements OnInit{
   editing: boolean = false;
   modalID: number = 0;
   router:any;
+  requestService:RequestService;
+  items:any;
+  isLogged:boolean = false;
   @Input() set nameIdentifier(n:string) {this.name = n;}
   @Input() set modalIdentifier(e:number) {this.modalID = e;}
-  constructor(router:Router) { 
+  @Input() set itemsVar(i:any) {this.items = i;}
+  constructor(router:Router, requestService:RequestService= new RequestService()) { 
     this.router = router;
+    this.requestService = requestService;
+    this.isLogged = this.requestService.isLogged;
     this.name = 'BaseEditorComponent';
   }
   

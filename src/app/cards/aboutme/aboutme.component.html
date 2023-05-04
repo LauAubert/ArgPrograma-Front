@@ -1,6 +1,6 @@
 <div class="card mb-4"> <!-- Card de aboutme-->
     <!-- si la sesion esta iniciada, muestre un boton de editar -->
-    <app-base-button 
+    <app-base-button *ngIf="this.isLogged"
         (editEvent)="handleEditEvent($event)" 
         [hasSaveVar]="true"
         [editVar]="this.editing">
@@ -11,7 +11,7 @@
         <h6 class="card-subtitle mb-2 text-muted"></h6>
 
         <p class="card-text" *ngIf="!editing">
-            {{texto}}
+            {{items.texto}}
         </p>
         <div *ngIf="editing">
             <textarea class="form-control" [(ngModel)]="textoTemp" rows="6" [value]="texto"></textarea>
