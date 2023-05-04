@@ -31,7 +31,7 @@ export class ExperienceModalComponent extends BaseModalComponent {
   allData:Array<T> = this.requestService.data.projects.concat(this.requestService.data.jobs);
   // defino T como un objeto con las propiedades que voy a usar
   //modalData: any; // objeto para guardar los datos a editar
-  editID: number = 0;
+  // editID: number = 0;
   constructor( route: ActivatedRoute, router: Router, requestService: RequestService) {
     super(route , router, requestService); 
   }

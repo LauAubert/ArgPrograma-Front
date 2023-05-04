@@ -39,7 +39,8 @@ export class BaseModalComponent {
   deleteURL:string  = '';
   postURL: any;
   backURL:string    = '/';
-
+  requestBody:any;
+  editID:number;
   route: ActivatedRoute;
   router: Router;
   requestService: RequestService;
@@ -50,6 +51,8 @@ export class BaseModalComponent {
     this.editURL = this.route.snapshot.data['name'];
     this.deleteURL = this.route.snapshot.data['deleteURL'];
     this.postURL = this.route.snapshot.data['postURL'];
+    this.requestBody = {}
+    this.editID = this.route.snapshot.queryParams['id'];
   }
 
   sendUpdateRequest(){}

@@ -20,7 +20,7 @@ export class EducationModalComponent extends BaseModalComponent{
 
   isEditMode: boolean = false; // para indicar si estamos en modo edición o creación
   allData:Array<any> = [];
-  editID: number = 0;
+  // editID: number = 0;
   name: string;
 
   constructor(router:Router,route:ActivatedRoute,requestService:RequestService) {

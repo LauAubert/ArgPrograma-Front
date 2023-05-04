@@ -21,7 +21,7 @@ export class SkillModalComponent extends BaseModalComponent{
   allData:Array<any> = [];
   // defino T como un objeto con las propiedades que voy a usar
   //modalData: any; // objeto para guardar los datos a editar
-  editID: number = 0;
+  // editID: number = 0;
 
   name: string;
   constructor(router:Router,route:ActivatedRoute,requestService:RequestService) {
