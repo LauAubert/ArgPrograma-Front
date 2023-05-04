@@ -23,7 +23,7 @@
             </div>
         <!-- </p> -->
     </div>
-    <app-base-button
+    <app-base-button *ngIf="this.isLogged"
         (editEvent)="handleEditEvent($event)"
         [editVar]="this.editing">
         [hasSaveVar]="false"
