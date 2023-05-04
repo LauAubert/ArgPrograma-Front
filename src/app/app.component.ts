@@ -15,9 +15,11 @@ export class AppComponent {
     public requestService:RequestService,
   ) { }
   ngOnInit(): void {
+    this.data = this.requestService.voidData;
     this.http.get(environment.apiURL+'all/').subscribe(data => {
       console.log(data);
       this.requestService.data = data;
+      this.data = data;
   }, error => {console.error(error);});
 
 }

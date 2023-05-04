@@ -9,6 +9,7 @@ export class RequestService {
   public data:any ;
   public isLogged:boolean = localStorage.getItem('Authorization') != null;
   public token:string|null = localStorage.getItem('Authorization');
+  public voidData = {skills: [],education: [],projects: [],languages: [],contact: [],jobs: [],aboutme: {id: 0,texto: '',lenguaje: ''},}
 }
 
 
