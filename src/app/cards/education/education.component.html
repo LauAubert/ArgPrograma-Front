@@ -4,12 +4,12 @@
       <li class="list-group-item" *ngFor="let item of items">
         <div class="row">
             <div class="col-1 col-icon">
-                <i class="fa-solid" [ngClass]="item.icon"></i>
+                <i class="fa-solid" [ngClass]="item.logo"></i>
             </div>
             <div class="col">
-                <b class="text-muted">{{item.degree}}</b>
-                <p class="mb-0">{{item.school}}</p>
-                <p class="mb-0">({{item.year}})</p>
+                <b class="text-muted">{{item.carrera}}</b>
+                <p class="mb-0">{{item.institucion}}</p>
+                <p class="mb-0">({{item.ano}})</p>
             </div>
             <div class="btn btn-success btn-pen"
                 *ngIf="this.editing"

@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { BaseModalComponent } from '../base-modal/base-modal.component';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import {data} from '../../app.component'
+// import {data} from '../../app.component'
+import { RequestService } from 'src/app/services/request-service.service';
 
 @Component({
   selector: 'app-education-modal',
@@ -11,10 +12,10 @@ import {data} from '../../app.component'
 })
 export class EducationModalComponent extends BaseModalComponent{
   form: FormGroup = new FormGroup({
-    'degree': new FormControl('', Validators.required),
-    'school': new FormControl('', Validators.required),
-    'year': new FormControl('', Validators.required),
-    'icon': new FormControl('', Validators.required),
+    'carrera': new FormControl('', Validators.required),
+    'institucion': new FormControl('', Validators.required),
+    'ano': new FormControl('', Validators.required),
+    'logo': new FormControl('', Validators.required),
   });
 
   isEditMode: boolean = false; // para indicar si estamos en modo edición o creación
@@ -22,15 +23,15 @@ export class EducationModalComponent extends BaseModalComponent{
   editID: number = 0;
   name: string;
 
-  constructor(router:Router,route:ActivatedRoute) {
-    super(route,router);
+  constructor(router:Router,route:ActivatedRoute,requestService:RequestService) {
+    super(route,router,requestService);
     this.name = 'EducationModalComponent';
   }
 
   ngOnInit(): void {
     console.log(this.route.snapshot.data['name'])
     this.editID = this.route.snapshot.queryParams['id'];
-    if      ( this.route.snapshot.data['name'] == 'Educación' ){this.allData = data.education;}
+    if      ( this.route.snapshot.data['name'] == 'Educación' ){this.allData = this.requestService.data.education;}
     console.log(this.allData)
     if(this.editID){
       this.isEditMode = true;
@@ -39,10 +40,10 @@ export class EducationModalComponent extends BaseModalComponent{
         );
       // seteamos los valores del formulario con los datos obtenidos
       this.form.setValue({
-        'degree': this.modalData.degree,
-        'school': this.modalData.school,
-        'year': this.modalData.year,
-        'icon': this.modalData.icon,
+        'carrera': this.modalData.carrera,
+        'institucion': this.modalData.institucion,
+        'ano': this.modalData.ano,
+        'logo': this.modalData.logo,
       });
     }
     

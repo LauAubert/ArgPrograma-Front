@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { BaseEditorComponent } from '../base-editor/base-editor.component';
 import { ModalComunicationService } from 'src/app/services/modal-comunication.service';
 import { Router } from '@angular/router';
+import { RequestService } from 'src/app/services/request-service.service';
 
 @Component({
   selector: 'app-education',
@@ -9,15 +10,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./education.component.css']
 })
 export class EducationComponent extends BaseEditorComponent{
-  items:any[];
   title:string;
-  @Input() set itemsVar(i:any[]) {this.items = i;}
   @Input() set titleVar(t:string) {this.title = t;}
 
-  constructor(private modalComunicationService:ModalComunicationService,router:Router) {
-    super(router);
+  constructor(requestService:RequestService,router:Router) {
+    super(router, requestService);
     this.name = 'EducationComponent';
-    this.items = [];
+    // this.items = [];
     this.title = 'EducationComponent';
   }
 
