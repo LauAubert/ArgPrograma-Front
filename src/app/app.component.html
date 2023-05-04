@@ -61,7 +61,7 @@
                 [modalIdentifier]="2"
                 [nameIdentifier]="'project'"
                 [titleVar]="'Proyectos'"
-                [itemsVar]="data.projects">
+                [itemsVar]="requestService.data.projects">
                 [modalUrlVar]="'/project'"
             </app-experience>
             <!-- Experiencia laboral -->
@@ -69,7 +69,7 @@
                 [modalIdentifier]="3"
                 [nameIdentifier]="'job'"
                 [titleVar]="'Experiencia Laboral'"
-                [itemsVar]="data.jobs">
+                [itemsVar]="requestService.data.jobs">
                 [modalUrlVar]="'/job'"
             </app-experience>
         </div>
@@ -85,21 +85,21 @@
                 [modalIdentifier]="5"
                 [nameIdentifier]="'skill'"
                 [titleVar]="'Hard & Soft Skills'"
-                [itemsVar]="data.skills">
+                [itemsVar]="requestService.data.skills">
             </app-skill>
             <!-- Educacion -->
             <app-education
                 [modalIdentifier]="6"
                 [nameIdentifier]="'education'"
                 [titleVar]="'Educación'"
-                [itemsVar]="data.education">
+                [itemsVar]="requestService.data.education">
             </app-education>
             <!-- Idiomas -->            
             <app-skill
                 [modalIdentifier]="7"
                 [nameIdentifier]="'language'"
                 [titleVar]="'Idiomas'"
-                [itemsVar]="data.languages">
+                [itemsVar]="requestService.data.languages">
             </app-skill>
         </div>
     </div>
