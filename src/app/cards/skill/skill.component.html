@@ -4,19 +4,19 @@
         <p class="card-text">
             <div *ngFor="let item of items">
                 <h6 class="card-subtitle mb-2 text-muted pt-3">
-                    <div *ngIf="!this.editing">{{item.name}}</div>
+                    <div *ngIf="!this.editing">{{item.nombre}}</div>
                     <div class="btn btn-success"
                     style="padding: 0px 12px 1px 12px " 
                         *ngIf="this.editing"
                         (click)="handleEditEvent('update',item.id)"
                     >
-                        {{item.name}}
+                        {{item.nombre}}
                     </div>
 
                 </h6>
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" 
-                        [ngStyle]="{'width': item.level+'%'}" 
+                        [ngStyle]="{'width': item.nivel+'%'}" 
                         aria-valuemin="0" aria-valuemax="100">
                     </div>
                 </div>

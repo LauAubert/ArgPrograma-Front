@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { BaseModalComponent } from '../base-modal/base-modal.component';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import {data} from '../../app.component'
+import { RequestService } from 'src/app/services/request-service.service';
+// import {data} from '../../app.component'
 
 @Component({
   selector: 'app-skill-modal',
@@ -12,9 +13,9 @@ import {data} from '../../app.component'
 
 export class SkillModalComponent extends BaseModalComponent{
   form: FormGroup = new FormGroup({
-    'name': new FormControl('', Validators.required),
-    'description': new FormControl('', Validators.required),
-    'level': new FormControl('', Validators.required)
+    'nombre': new FormControl('', Validators.required),
+    // 'description': new FormControl('', Validators.required),
+    'nivel': new FormControl('', Validators.required)
   });
   isEditMode: boolean = false; // para indicar si estamos en modo edición o creación
   allData:Array<any> = [];
@@ -23,15 +24,15 @@ export class SkillModalComponent extends BaseModalComponent{
   editID: number = 0;
 
   name: string;
-  constructor(router:Router,route:ActivatedRoute) {
-    super(route,router);
+  constructor(router:Router,route:ActivatedRoute,requestService:RequestService) {
+    super(route,router,requestService);
     this.name = 'SkillModalComponent';  
   }
   ngOnInit(): void {
     console.log(this.route.snapshot.data['name'])
     this.editID = this.route.snapshot.queryParams['id'];
-    if      ( this.route.snapshot.data['name'] == 'Idioma' ){this.allData = data.languages;}
-    else if ( this.route.snapshot.data['name'] == 'Habilidad'  ){this.allData = data.skills;}
+    if      ( this.route.snapshot.data['name'] == 'Idioma' ){this.allData = this.requestService.data.languages;}
+    else if ( this.route.snapshot.data['name'] == 'Habilidad'  ){this.allData = this.requestService.data.skills;}
     console.log(this.allData)
     if(this.editID){
       this.isEditMode = true;
@@ -40,9 +41,9 @@ export class SkillModalComponent extends BaseModalComponent{
         );
       // seteamos los valores del formulario con los datos obtenidos
       this.form.setValue({
-        'name': this.modalData.name,
-        'description': this.modalData.description,
-        'level': this.modalData.level,
+        'nombre': this.modalData.nombre,
+        // 'description': this.modalData.description,
+        'nivel': this.modalData.nivel,
       });
     }
     

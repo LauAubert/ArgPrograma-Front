@@ -16,16 +16,12 @@
             <div class="card-body">
                 <form [formGroup]="form" action="" method="post">
                     <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" formControlName="name">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" formControlName="nombre">
                     </div>
                     <div class="form-group">
-                        <label for="description">Descripción</label>
-                        <input type="text" class="form-control" id="description" name="description" formControlName="description" placeholder="Descripción">
-                    </div>
-                    <div class="form-group">
-                        <label for="level">Nivel (0-100)</label>
-                        <input type="number" class="form-control" id="level" name="level" formControlName="level" placeholder="0%-100%">
+                        <label for="nivel">Nivel (0-100)</label>
+                        <input type="number" class="form-control" id="nivel" name="nivel" formControlName="nivel" placeholder="0%-100%">
                     </div>
                 </form>
                 <div *ngIf="this.editID" class="btn mt-3 btn-danger" (click)="sendRemoveRequest()">Eliminar</div>
