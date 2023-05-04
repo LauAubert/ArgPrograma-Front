@@ -9,9 +9,9 @@
                     <img src="/assets/images/image-default.png" alt="" width="100%">
                 </div>
                 <div class="col-sm">
-                    <h5 class="card-title">{{item.name}}</h5>
-                    <h6 class="card-title text-muted">{{item.year}}</h6>
-                    <p class="card-text">{{item.description}}</p>
+                    <h5 class="card-title">{{item.titulo}}</h5>
+                    <h6 class="card-title text-muted">{{item.ano}}</h6>
+                    <p class="card-text">{{item.descripcion}}</p>
                 </div>
             </div>
             <app-ud-button
@@ -24,7 +24,7 @@
             </app-ud-button>
         </li>
     </ul>
-    <app-base-button 
+    <app-base-button *ngIf="this.isLogged"
         (editEvent)="handleEditEvent($event)" 
         [editVar]="this.editing"
         [hasSaveVar]="false">

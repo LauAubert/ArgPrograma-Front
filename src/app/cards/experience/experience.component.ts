@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { BaseEditorComponent } from '../base-editor/base-editor.component';
 import { ModalComunicationService } from 'src/app/services/modal-comunication.service';
 import { Router } from '@angular/router';
+import { RequestService } from 'src/app/services/request-service.service';
 
 @Component({
   selector: 'app-experience',
@@ -9,13 +10,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./experience.component.css']
 })
 export class ExperienceComponent extends BaseEditorComponent{
-  items:any[];
+  // items:any[];
   title:string;
-  @Input() set itemsVar(i:any[]) {this.items = i;}
+  // @Input() set itemsVar(i:any[]) {this.items = i;}
   @Input() set titleVar(t:string) {this.title = t;}
   
-  constructor(private modalComunicationService:ModalComunicationService, router:Router) {
-    super(router);
+  constructor(requestService:RequestService, router:Router) {
+    super(router, requestService);
     this.name = 'ExperienceComponent';
     this.items = [];
     this.title = 'ExperienceComponent';

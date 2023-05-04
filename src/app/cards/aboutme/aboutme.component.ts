@@ -11,8 +11,8 @@ import { RequestService } from 'src/app/services/request-service.service';
 export class AboutmeComponent extends BaseEditorComponent{
   texto:string;
   textoTemp:string;
-  constructor(router:Router) {
-    super(router);
+  constructor(requestService:RequestService,router:Router) {
+    super(router,requestService);
     this.name = 'AboutmeComponent';
     this.texto = 'Texto de AboutmeComponent';
     this.textoTemp = "";

@@ -18,7 +18,7 @@ export class BaseEditorComponent implements OnInit{
   @Input() set nameIdentifier(n:string) {this.name = n;}
   @Input() set modalIdentifier(e:number) {this.modalID = e;}
   @Input() set itemsVar(i:any) {this.items = i;}
-  constructor(router:Router, requestService:RequestService= new RequestService()) { 
+  constructor(router:Router, requestService:RequestService) { 
     this.router = router;
     this.requestService = requestService;
     this.isLogged = this.requestService.isLogged;
