@@ -48,7 +48,13 @@ export class LoginModalComponent {
   }
 
   backToHome(){
-    this.router.navigateByUrl('/');
+    window.location.reload();
+  }
+
+  ngOnInit(): void {
+    if (localStorage.getItem('Authorization') != null) {
+      this.router.navigateByUrl('/');
+    }
   }
 }
 
