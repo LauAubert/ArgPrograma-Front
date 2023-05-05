@@ -40,5 +40,14 @@ export class AppComponent implements  OnInit{
   isCollapsed:boolean = true;
   isLogged:boolean = localStorage.getItem('Authorization') != null;
   data:any;
+
+  goToLogin(){
+    this.router.navigate(['/login']);
+  }
+  goToLogout(){
+    localStorage.removeItem('Authorization');
+    this.isLogged = false;
+    location.reload();
+  }
 }
 // export {data};
