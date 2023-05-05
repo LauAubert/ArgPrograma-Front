@@ -13,6 +13,9 @@ const routes: Routes = [
     component: ExperienceModalComponent,
     data: {
       name: 'Proyecto',
+      postURL: 'experience/',
+      deleteURL: 'experience/',
+      class: 'project',
     }
   },
   {
@@ -20,6 +23,9 @@ const routes: Routes = [
     component: ExperienceModalComponent,
     data: {
       name: 'Trabajo',
+      postURL: 'experience/',
+      deleteURL: 'experience/',
+      class: 'job',
     }
   },
   {
@@ -27,6 +33,9 @@ const routes: Routes = [
     component: SkillModalComponent,
     data: {
       name: 'Habilidad',
+      postURL: 'skill/',
+      deleteURL: 'skill/',
+      class: 'skill',
     }
   },
   {
@@ -34,6 +43,9 @@ const routes: Routes = [
     component: SkillModalComponent,
     data: {
       name: 'Idioma',
+      postURL: 'skill/',
+      deleteURL: 'skill/',
+      class: 'language',
     }
   },
   {
@@ -41,6 +53,8 @@ const routes: Routes = [
     component: EducationModalComponent,
     data: { 
       name: 'Educación',
+      postURL: 'education/',
+      deleteURL: 'education/',
     }
   },
   {
@@ -48,6 +62,7 @@ const routes: Routes = [
     component: ContactModalComponent,
     data: {
       name: 'Contacto',
+      postURL: 'contact/',
     }
   },
   {
@@ -55,6 +70,7 @@ const routes: Routes = [
     component: AboutmeModalComponent,
     data: {
       name: 'Sobre mi',
+      postURL: 'aboutme/1',
     }
   },
   {

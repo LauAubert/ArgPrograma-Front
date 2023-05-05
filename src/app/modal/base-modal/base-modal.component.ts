@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, Output, EventEmitter, Input ,OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RequestService } from 'src/app/services/request-service.service';
@@ -44,7 +45,7 @@ export class BaseModalComponent {
   route: ActivatedRoute;
   router: Router;
   requestService: RequestService;
-  constructor(route:ActivatedRoute,router:Router, requestService:RequestService){
+  constructor(route:ActivatedRoute,router:Router, requestService:RequestService){  
     this.route = route;
     this.router = router;
     this.requestService = requestService;
@@ -55,8 +56,21 @@ export class BaseModalComponent {
     this.editID = this.route.snapshot.queryParams['id'];
   }
 
-  sendUpdateRequest(){}
-  sendRemoveRequest(){}
+  sendUpdateRequest(){
+    this.requestService.postRequest(this.postURL,this.requestBody)
+      .subscribe( (data:any) => { 
+        console.log(data);
+        this.backToHome();
+      })
+    }
+    sendRemoveRequest(){
+      this.requestService.deleteRequest(this.deleteURL+this.editID)
+      .subscribe( (data:any) => { 
+        console.log(data);
+        this.backToHome(); 
+      })
+
+  }
   backToHome(){
     this.router.navigate([this.backURL]);
   }
