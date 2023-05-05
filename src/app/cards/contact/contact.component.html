@@ -17,7 +17,7 @@
             <!-- </p> -->
     </div>
 
-    <app-base-button
+    <app-base-button *ngIf="isLogged"
         (editEvent)="handleEditEvent($event)" 
         [hasSaveVar]="true"
         [editVar]="this.editing">>

@@ -20,7 +20,7 @@
         </div>
       </li>
     </ul>
-    <app-base-button
+    <app-base-button *ngIf="isLogged"
         (editEvent)="handleEditEvent($event)"
         [hasSaveVar]="false"
         [editVar]="this.editing">
