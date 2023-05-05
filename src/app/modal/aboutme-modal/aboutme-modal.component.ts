@@ -28,4 +28,12 @@ export class AboutmeModalComponent extends BaseModalComponent{
       'text': this.allData.texto,
     });
   }
+
+  override sendUpdateRequest(){
+    this.requestBody = {
+      'id': 1,
+      'texto': this.form.value.text,
+    }
+    super.sendUpdateRequest();
+  }
 }

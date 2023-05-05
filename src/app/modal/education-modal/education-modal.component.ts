@@ -49,4 +49,14 @@ export class EducationModalComponent extends BaseModalComponent{
     
   }
 
+  override sendUpdateRequest(){
+    this.requestBody = {
+      'id': this.editID,
+      'carrera': this.form.value.carrera,
+      'institucion': this.form.value.institucion,
+      'ano': this.form.value.ano,
+      'logo': this.form.value.logo,
+    }
+    super.sendUpdateRequest();
+  }
 }

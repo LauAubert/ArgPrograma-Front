@@ -62,6 +62,21 @@ export class ExperienceModalComponent extends BaseModalComponent {
     }
   }
 
+  override sendUpdateRequest(){
+    let tipo:String = '';
+    if      ( this.route.snapshot.data['name'] == 'Proyecto' ){tipo= "project";}
+    else if ( this.route.snapshot.data['name'] == 'Trabajo'  ){tipo= "job";}
+    this.requestBody = {
+      'id': this.editID,
+      'titulo': this.form.value.titulo,
+      'ano': this.form.value.ano,
+      'descripcion': this.form.value.descripcion,
+      'imagen': this.form.value.imagen,
+      'tipo': tipo
+    }
+
+    super.sendUpdateRequest();
+  }
 }
 
 // console.log(this.route.snapshot.queryParams['id'])

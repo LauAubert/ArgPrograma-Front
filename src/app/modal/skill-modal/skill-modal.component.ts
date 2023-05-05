@@ -48,4 +48,19 @@ export class SkillModalComponent extends BaseModalComponent{
     }
     
   }
+
+  override sendUpdateRequest(): void {
+    let tipo:string = '';
+    if      ( this.route.snapshot.data['name'] == 'Idioma' ){tipo = 'language';}
+    else if ( this.route.snapshot.data['name'] == 'Habilidad'  ){tipo = 'skill';}
+    this.requestBody = {
+      'id': this.editID,
+      'nombre': this.form.value.nombre,
+      // 'description': this.form.value.description,
+      'nivel': this.form.value.nivel,
+      'tipo': tipo,
+    }
+
+    super.sendUpdateRequest();
+  }
 }

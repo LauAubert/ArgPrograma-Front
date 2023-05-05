@@ -35,4 +35,25 @@ export class ContactModalComponent extends BaseModalComponent{
       'phone': this.allData[2].texto,
     });
   }
+
+  override sendUpdateRequest(){
+    this.requestBody = [
+      {
+        'id': this.allData[0].id,
+        'texto': this.form.value.location,
+        'icono': this.allData[0].icono,
+      },
+      {
+        'id': this.allData[1].id,
+        'texto': this.form.value.email,
+        'icono': this.allData[1].icono,
+      },
+      {
+        'id': this.allData[2].id,
+        'texto': this.form.value.phone,
+        'icono': this.allData[2].icono,
+      },
+    ]
+    super.sendUpdateRequest();
+  }
 }
