@@ -30,4 +30,7 @@ export class ExperienceComponent extends BaseEditorComponent{
     // console.log('Enviando datos al modal...');
   }
 
+  onImageLoadError(event: any) {
+    event.target.src = '/assets/images/image-default.png';
+  }
 }
