@@ -1,4 +1,4 @@
 // environment file
 export const environment = {
-    apiURL: 'http://localhost:8080/',
+    apiURL: 'https://argprograma-back.fly.dev/',
 }
