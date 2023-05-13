@@ -39,7 +39,12 @@ export class LoginModalComponent {
             localStorage.removeItem('Authorization');
             alert(JSON.stringify(response));
           }
+          console.log('response:')
           console.log(response)
+          if (response.Error == null && response.token != null){
+            this.router.navigateByUrl('/');
+            window.location.reload();
+          }
         },
         error => {
           alert('Error de inicio de sesión: '+ error);
