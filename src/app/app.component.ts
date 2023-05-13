@@ -17,11 +17,15 @@ export class AppComponent implements  OnInit{
     private router:Router,
   ) { 
     router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {this.getRequest();}
+      if (event instanceof NavigationEnd) {
+        this.getRequest();
+        if (event.url == '' ||event.url == '/') this.isLoading = true;
+      }
     });
   }
   
   ngOnInit(): void {
+    this.isFirstLoading = true;
     this.data = this.requestService.voidData;
     this.getRequest();
   }
@@ -33,13 +37,20 @@ export class AppComponent implements  OnInit{
       console.log(data);
       this.requestService.data = data;
       this.data = data;
-    }, error => {console.error(error);});
+      this.isFirstLoading = false;
+      this.isLoading = false;
+    }, error => {
+      console.error(error);
+      alert('Error al obtener los datos del servidor \n'+error);
+    });
   }
 
   title = 'ArgPrograma-Front';
   isCollapsed:boolean = true;
   isLogged:boolean = localStorage.getItem('Authorization') != null;
   data:any;
+  isFirstLoading:boolean = false;
+  isLoading:boolean = false;
 
   goToLogin(){
     this.router.navigate(['/login']);
