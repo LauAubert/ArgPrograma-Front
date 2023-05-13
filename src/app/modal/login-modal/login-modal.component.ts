@@ -48,7 +48,8 @@ export class LoginModalComponent {
   }
 
   backToHome(){
-    window.location.reload();
+    this.router.navigateByUrl('/');
+    console.log('back to home');
   }
 
   ngOnInit(): void {

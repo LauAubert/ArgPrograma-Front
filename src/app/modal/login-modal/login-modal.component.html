@@ -6,7 +6,7 @@
             <div class="card-header">
                 <div *ngIf="true">Inicie Sesion</div>
             </div>
-            <form (submit)="login()">
+            <form (submit)="login()" (keydown.enter)="login()">
             <div class="card-body">
                     <div class="form-group">
                         <label for="location">Usuario</label>
